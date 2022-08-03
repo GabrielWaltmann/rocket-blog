@@ -13,16 +13,19 @@ body{
     height: 100%;
 }
 
+html{
+    scroll-padding-top: 90px;
+    scroll-behavior: smooth;
+}
 *{
     box-sizing: border-box;
     text-decoration: none;
 }
 
 main{
-    height: 50vh;
     overflow: hidden;
 }
- #home{
+ #home, header{
     background: var(--purple-bg);
     border-color: var(--green) !important;
 }
@@ -43,70 +46,27 @@ main{
 .carousel-item img{
     max-width: 450px !important;
     margin: 0 auto !important;
-}
-/*
-main .card{
-    height: 100%;
+    border-radius: 10px !important;
 }
 
-.link, .link:hover{
-    color: var(--button-bg);
-    font-weight: 700;
+.navbar-toggler[aria-expanded="false"]{
+    margin: 0 !important;
 }
 
-.infosOfHome, .infosOfMain{
-    min-width: 100% !important;
-}
-
-main .card{
-    border: none;
-}
-
-main p{
-    text-align: justify !important;
-}
-
-#slides img{
-    max-height: 300px;
-}
-
-@media (max-width: 768px) {
-    #carousel-2{
-        display: none !important;
-    }
-
+@media only screen and (min-width: 768px) { /* Desktop */
     main{
-        margin-right: 0 !important;
-        margin-left: 0 !important;
+        height: 50vh !important;
     }
-
-    .container-fluid{
-        justify-content: center !important;
-        gap: 10vw;
-    }
-
-    #about{
-        text-align: center;
-    }
-    #about div{
-        justify-content: center;
-    }
-
-    .link{
-        justify-content: center;
-    }
-
-    .card  img{
-        height: 300px !important;
-    }
-
-    .slides{
-        max-height: 430px;
-    }
-
-    .card{
-        margin-bottom: 30px;
-    }
+    
 }
 
- */
+@media only screen and (max-width: 768px) { /* mobile */
+    .border, .card{
+        border: none !important;
+    }
+
+    .justify-content-center {
+        
+        justify-content: flex-start !important;
+    }
+}
