@@ -18,9 +18,35 @@ body{
     text-decoration: none;
 }
 
-#home{
+main{
+    height: 50vh;
+    overflow: hidden;
+}
+ #home{
     background: var(--purple-bg);
     border-color: var(--green) !important;
+}
+
+.carousel{
+    height: 50vh;
+}
+
+
+.h-40{
+    height: 43%;
+}
+.carousel-item{
+    height: 100%;
+    text-align: center;
+}
+
+.carousel-item img{
+    max-width: 450px !important;
+    margin: 0 auto !important;
+}
+/*
+main .card{
+    height: 100%;
 }
 
 .link, .link:hover{
@@ -32,7 +58,9 @@ body{
     min-width: 100% !important;
 }
 
-
+main .card{
+    border: none;
+}
 
 main p{
     text-align: justify !important;
@@ -67,5 +95,18 @@ main p{
     .link{
         justify-content: center;
     }
+
+    .card  img{
+        height: 300px !important;
+    }
+
+    .slides{
+        max-height: 430px;
+    }
+
+    .card{
+        margin-bottom: 30px;
+    }
 }
 
+ */
