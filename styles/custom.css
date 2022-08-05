@@ -14,9 +14,10 @@ body{
 }
 
 html{
-    scroll-padding-top: 90px;
+    scroll-padding-top: 110px;
     scroll-behavior: smooth;
 }
+
 *{
     box-sizing: border-box;
     text-decoration: none;
@@ -34,6 +35,9 @@ main{
     height: 50vh;
 }
 
+.border-radius-none{
+    border-radius: 0 !important;
+}
 
 .h-40{
     height: 43%;
@@ -46,8 +50,9 @@ main{
 .carousel-item img{
     max-width: 450px !important;
     margin: 0 auto !important;
-    border-radius: 10px !important;
+    
 }
+
 
 .navbar-toggler[aria-expanded="false"]{
     margin: 0 !important;
