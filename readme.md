@@ -14,7 +14,6 @@
 <p>As seguintes ferramentas foram usadas na construção do projeto:</p>
 ✔️ Bootstrap 5<br>
 ✔️ HTML<br>
-✔️ API distancep<br>
 ✔️ CSS<br>
 <hr>
 
