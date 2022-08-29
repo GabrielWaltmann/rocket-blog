@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+:root {
+    --bgMenu: #290742;
+    --font: 'Poppins', sans-serif, Arial;
+    --UserAndHoverColor: #454545;
+    --paternColor: #faf9f9;
+}
+
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--font);
+}
+
+html{
+    scroll-padding-top: 110px;
+    scroll-behavior: smooth;
+
+    body{
+        overflow-x: hidden;
+        width: 100vw;
+
+
+        header{
+            padding: 2rem 4rem;
+            background-color: var(--bgMenu);
+            max-width: 400px;
+            height: 100vh;
+
+
+            #menu {
+                img{
+                    width: 3rem;
+                    height: 2rem;
+                }
+
+                a{
+                    font-size: 30px;
+                    color: var(--paternColor);
+                }
+            }
+
+
+            #profile{
+                padding-bottom: 7rem;
+
+                img{
+                    height: 6.25rem;
+                    width: 6.25rem;
+                    border-radius: 50%;
+                }
+
+
+                h3{
+                    color: var(--UserAndHoverColor);
+                    font-size: 2rem;
+                }
+
+                #checkIcon{
+                    height: 36px;
+                    width: 36px;
+                    bottom: 0;
+                    left: 75%;
+                }
+            }
+
+            ul li{
+                a:hover{
+                    text-decoration: underline !important;
+                }
+            }
+        }
+
+        main{
+            #infos{
+
+                .btn-outline-primary{
+                    border-color: var(--bgMenu);
+                    color: var(--bgMenu);
+                    transition: all .3s ease-in;
+                    &:hover{
+                        background-color: var(--bgMenu);
+                        color: var(--paternColor);
+                    }
+                }
+                #postLength{
+                color: var(--UserAndHoverColor);
+                gap: 10px;
+
+                h3, span{
+                    font-size: 1rem;
+                }
+                }
+            }
+
+            #posts{
+                tr {
+                    td{
+                        height: 6rem;
+                        padding-right: 20px;
+
+                    }
+                }
+            }
+
+        }
+    }   
+}
+
+
+
+/* 
+ #home, header{
+    background: var(--purple-bg);
+    border-color: var(--green) !important;
+}
+main{
+    overflow: hidden;
+}
+
+
+.carousel{
+    height: 50vh;
+}
+
+.border-radius-none{
+    border-radius: 0 !important;
+}
+
+.h-40{
+    height: 43%;
+}
+.carousel-item{
+    height: 100%;
+    text-align: center;
+}
+
+.carousel-item img{
+    max-width: 450px !important;
+    margin: 0 auto !important;
+    
+}
+
+
+.navbar-toggler[aria-expanded="false"]{
+    margin: 0 !important;
+}
+
+@media only screen and (min-width: 768px) { 
+    main{
+        height: 50vh !important;
+    }
+    
+}
+
+@media only screen and (max-width: 768px) {
+    .border, .card{
+        border: none !important;
+    }
+
+    .justify-content-center {
+        
+        justify-content: flex-start !important;
+    }
+}
+ */

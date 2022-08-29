@@ -7,13 +7,15 @@
   --green: #4fff4b;
 }
 
-body{
-    overflow-x: hidden;
-    width: 100vw;
-    height: 100%;
-}
+
 
 html{
+    body{
+        overflow-x: hidden;
+        width: 100vw;
+        height: 100%;
+    }
+
     scroll-padding-top: 110px;
     scroll-behavior: smooth;
 }
@@ -39,20 +41,9 @@ main{
     border-radius: 0 !important;
 }
 
-.h-40{
-    height: 43%;
+.card{
+    height: 450px !important;
 }
-.carousel-item{
-    height: 100%;
-    text-align: center;
-}
-
-.carousel-item img{
-    max-width: 450px !important;
-    margin: 0 auto !important;
-    
-}
-
 
 .navbar-toggler[aria-expanded="false"]{
     margin: 0 !important;
