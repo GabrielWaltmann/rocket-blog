@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 :root {
   --bgMenu: #290742;
+  --bgEditor: #000000e5;
   --font: "Poppins", sans-serif, Arial;
   --UserAndHoverColor: #454545;
   --paternColor: #faf9f9;
@@ -77,58 +78,22 @@ html body main #posts tr td {
   padding-right: 20px;
 }
 
-/* 
- #home, header{
-    background: var(--purple-bg);
-    border-color: var(--green) !important;
+#editor {
+  background-color: var(--bgEditor);
+  width: 600px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--paternColor);
 }
-main{
-    overflow: hidden;
+#editor .btn-outline-primary {
+  border-color: var(--bgMenu);
+  transition: all 0.3s ease-in;
+  background-color: var(--bgMenu);
+  color: var(--paternColor);
 }
-
-
-.carousel{
-    height: 50vh;
-}
-
-.border-radius-none{
-    border-radius: 0 !important;
-}
-
-.h-40{
-    height: 43%;
-}
-.carousel-item{
-    height: 100%;
-    text-align: center;
-}
-
-.carousel-item img{
-    max-width: 450px !important;
-    margin: 0 auto !important;
-
-}
-
-
-.navbar-toggler[aria-expanded="false"]{
-    margin: 0 !important;
-}
-
-@media only screen and (min-width: 768px) { 
-    main{
-        height: 50vh !important;
-    }
-
-}
-
-@media only screen and (max-width: 768px) {
-    .border, .card{
-        border: none !important;
-    }
-
-    .justify-content-center {
-
-        justify-content: flex-start !important;
-    }
-}
- *//*# sourceMappingURL=main.css.map */
+#editor .btn-outline-primary:hover {
+  background-color: #121212;
+  border-color: #121212;
+}/*# sourceMappingURL=main.css.map */
