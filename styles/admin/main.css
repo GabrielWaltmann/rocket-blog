@@ -23,36 +23,38 @@ html body {
   width: 100vw;
 }
 html body header {
-  padding: 2rem 4rem;
+  padding: 1rem 2rem;
   background-color: var(--bgMenu);
-  max-width: 400px;
+  max-width: 150px !important;
   height: 100vh;
 }
 html body header #menu img {
-  width: 3rem;
-  height: 2rem;
+  width: 2rem;
+  height: 1rem;
 }
 html body header #menu a {
-  font-size: 30px;
+  font-size: 1rem;
   color: var(--paternColor);
 }
 html body header #profile {
   padding-bottom: 7rem;
 }
 html body header #profile img {
-  height: 6.25rem;
-  width: 6.25rem;
+  height: 4rem;
+  width: 4rem;
   border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2392156863) 0px 3px 8px;
 }
 html body header #profile h3 {
-  color: var(--UserAndHoverColor);
-  font-size: 2rem;
+  color: var(--paternColor);
+  font-size: 1.5rem;
 }
 html body header #profile #checkIcon {
-  height: 36px;
-  width: 36px;
+  height: 1.5rem;
+  width: 1.5rem;
   bottom: 0;
   left: 75%;
+  box-shadow: rgba(0, 0, 0, 0.2392156863) 0px 3px 8px;
 }
 html body header ul li a:hover {
   text-decoration: underline !important;
@@ -73,7 +75,11 @@ html body main #infos #postLength {
 html body main #infos #postLength h3, html body main #infos #postLength span {
   font-size: 1rem;
 }
-html body main #posts tr td {
+html body main #posts table {
+  border-spacing: 30px;
+  border-collapse: separate;
+}
+html body main #posts .cell td {
   height: 6rem;
   padding-right: 20px;
 }

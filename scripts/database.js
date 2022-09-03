@@ -1,6 +1,6 @@
 import { db } from "./firebaseConfig.js"
 
-import { collection, deleteDoc, setDoc, doc, updateDoc, onSnapshot, getDocs, query } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
+import { collection, deleteDoc , setDoc, doc, updateDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
 
 /* Global variables */
 /* get  datas */
@@ -9,25 +9,40 @@ onSnapshot(collection(db, "posts"), (doc) => {
     database = []
     doc.forEach(data => database.push(data.data()));
 })
-
+/* tools */
 function c(data) { console.log(data) }
+function reloadPage() {document.location.reload(true)}
 
 /* Show posts on screen */
+function showPosts(database) {
+    const table = document.querySelector("#posts table")
 
-function showDatas(database) {
+    function createHeader(){
+
+        const titleHeader = document.createElement('th')
+        const contentHeader = document.createElement('th')
+
+        titleHeader.id = "tableTitle"
+        contentHeader.id = "tableContent"
+
+        titleHeader.innerHTML = "Title"
+        contentHeader.innerHTML = "Content"
+        
+        table.appendChild(titleHeader)
+        table.appendChild(contentHeader)
+    }
+
     function showDatabase(){
         database.forEach(post => {
-            const table = document.querySelector("#posts table tbody")
-        
-            function createRow() { return table.insertRow(1) }
-            const row = createRow()
-            const id = row.insertCell(0);
-            const title = row.insertCell(1);
-
-            id.innerHTML = post.id
-            id.parentElement.id = post.id
-            id.parentElement.className = "cell"
-            title.innerHTML = post.title
+            const newRow = table.insertRow();
+            const title = newRow.insertCell();
+            const content = newRow.insertCell();
+            const newTitle = document.createTextNode(post.title);
+            const newContent = document.createTextNode(post.content);
+            title.appendChild(newTitle);
+            content.appendChild(newContent);
+            newRow.className = "cell"
+            newRow.id = post.id
         })
     }
     function cellListener(){
@@ -37,11 +52,44 @@ function showDatas(database) {
         for(let cell of cells){ cell.onclick = event => showeditor(cell.id) }
     }
 
+    function createPostlistener(){
+        const createBtn = document.querySelector("#createBtn")
+        createBtn.onclick = event => {showeditor()}
+    }
+    
+    createHeader()
     showDatabase()
     cellListener()
+    createPostlistener()
 }
-
+/* Show editor when click in a button */
 function showeditor(cellId){
+
+    function getDatas(){
+        const title = document.querySelector("#inputData").value
+        const content = document.querySelector("#textarea").value
+        return {title: title, content: content, id: cellId}
+    }
+
+    function buttonsListeners(post){
+        const buttons = {
+            save: document.querySelector("#saveBtn"),
+            cancel: document.querySelector("#cancelBtn"),
+            remove: document.querySelector("#removeBtn"),
+            add: document.querySelector("#addBtn"),
+        }
+
+
+        if(post != undefined){
+            buttons.remove.onclick = event => removePost(getDatas())
+            buttons.save.onclick = event => updatePost(getDatas())
+            buttons.cancel.onclick = event => reloadPage()
+        }else{
+            buttons.cancel.onclick = event => reloadPage()
+            buttons.add.onclick = event => addPost(getDatas())
+        }
+    }
+
     function findObject(cellId) {
         let obj = undefined
         database.forEach(object => {if(object.id == cellId){ obj = object}}) 
@@ -50,46 +98,48 @@ function showeditor(cellId){
     }
 
     function insertEditor(post){
-        try {
+        if(post != undefined) {
             let post = findObject(cellId)
         
-            document.body.innerHTML += `<div class="position-absolute p-5 rounded-4" id="editor"> <h2>Editar Informações =</h2> <div class="mb-3"> <label for="exampleFormControlInput1" class="form-label">Título</label> <input type="email" class="form-control" id="inputData" value="${post.title}"> </div> <div class="mb-3"> <label for="textarea" class="form-label">Conteudo</label> <textarea class="form-control" id="textarea" rows="3"  >${post.content}</textarea> </div> <button class="btn btn-outline-primary rounded-3" id="saveBtn">Salvar</button> <button class="btn btn-outline-primary rounded-3" id="cancelBtn">Cancelar</button> <button class="btn btn-outline-primary rounded-3" id="removeBtn">remover</button> </div>`
+            document.body.innerHTML += `<div class="position-absolute p-5 rounded-4" id="editor"> <h2>Editar Informações </h2> <div class="mb-3"> <label for="exampleFormControlInput1" class="form-label">Título</label> <input type="email" class="form-control" id="inputData" value="${post.title}"> </div> <div class="mb-3"> <label for="textarea" class="form-label">Conteudo</label> <textarea class="form-control" id="textarea" rows="3"  >${post.content}</textarea> </div> <button class="btn btn-outline-primary rounded-3" id="saveBtn">Salvar</button> <button class="btn btn-outline-primary rounded-3" id="cancelBtn">Cancelar</button> <button class="btn btn-outline-primary rounded-3" id="removeBtn">remover</button> </div>`
             const saveBtn = document.querySelector('#saveBtn')
             const cancelBtn = document.querySelector('#cancelBtn')
             const removeBtn = document.querySelector('#removeBtn')
-            removeBtn.onclick = e => c(e)
-        } catch {
-            document.body.innerHTML += `<div class="position-absolute p-5 rounded-4" id="editor"> <h2>Editar Informações:</h2> <div class="mb-3"> <label for="exampleFormControlInput1" class="form-label">Título</label> <input type="email" class="form-control" id="inputData" value=""> </div> <div class="mb-3"> <label for="textarea" class="form-label">Conteudo</label> <textarea class="form-control" id="textarea" rows="3"  ></textarea> </div> <button class="btn btn-outline-primary rounded-3" id="saveBtn">Salvar</button> <button class="btn btn-outline-primary rounded-3" id="cancelBtn">Cancelar</button> <button class="btn btn-outline-primary rounded-3" id="removeBtn">remover</button> </div>` 
+
+        } else {
+            document.body.innerHTML += `<div class="position-absolute p-5 rounded-4" id="editor"> <h2>Editar Informações:</h2> <div class="mb-3"> <label for="exampleFormControlInput1" class="form-label">Título</label> <input type="email" class="form-control" id="inputData" value=""> </div> <div class="mb-3"> <label for="textarea" class="form-label">Conteudo</label> <textarea class="form-control" id="textarea" rows="3"  ></textarea> </div> <button class="btn btn-outline-primary rounded-3" id="addBtn">Adicionar</button> <button class="btn btn-outline-primary rounded-3" id="cancelBtn">Cancelar</button>  </div>` 
         }
+
+        buttonsListeners(post)
     }
 
     insertEditor(findObject(cellId))
 }
-
-function editDatas(element, post) {
-    element.onclick = event => {
-        const id = (event.target.parentElement.children[0].innerHTML)
-        insertTextArea(post, id)
-    }
+/* Add infos in a post */
+async function updatePost(object) {
+    await updateDoc(doc(db, "posts", object.id), {
+        title: object.title,
+        content: object.content
+    }, { merge: true });
+    reloadPage()
 }
 
-
-/*     document.querySelector('#createBtn').onclick = e =>  c("terdt")
- */ 
-
-
-async function updateDatas(title, content, id) {
-    await setDoc(doc(collection(db, "post")), {
-        title: title
-    });
-
-    document.location.reload(true)
+/* remove post on Firebase  */
+async function removePost(object){
+    await deleteDoc(doc(db, "posts", object.id));
+    reloadPage()
 }
 
-async function addDatas(title, content, id) {
-    await setDoc(doc(collection(db, "posts")), {
-        title: title,
-        content: content,
+/* Create a new post */
+async function addPost(object) {
+    let id = new Date();
+    id = id.getTime().toString()
+
+    c(typeof id)
+
+    await setDoc(doc(db, "posts", id), {
+        title: object.title,
+        content: object.content,
         id: id
     });
 
@@ -97,113 +147,15 @@ async function addDatas(title, content, id) {
 
 }
 
-
-
+/* Update counter on screen */
+function updateCounter(){
+    const number = document.querySelector("#postLength")
+    return number.children[1].innerHTML = database.length
+}
 
 setTimeout(() => {
-    showDatas(database)
-
+    showPosts(database)
+    updateCounter()
 
 }, 500);
 
-
-/* function insertTextArea(post, id) {
-
-    listener(id)
-
-} */
-
-/* function listener(id) {
-    const saveBtn = document.querySelector('#saveBtn')
-    const cancelBtn = document.querySelector('#cancelBtn')
-    const removeBtn = document.querySelector('#removeBtn')
-
-    saveBtn.onclick = event => {
-        const title = document.querySelector("#inputData").value
-        const content = document.querySelector("textarea").value
-
-        updateDatas(title, content, id)
-    }
-
-    cancelBtn.onclick = event => document.location.reload(true)
-
-    removeBtn.onclick = event => {
-        const title = document.querySelector("#inputData").value
-        const content = document.querySelector("textarea").value
-
-        removeData(title, content, id)
-    }
-} */
-    /*     
-        document.querySelector("#createBtn").onclick = event => {
-            document.body.innerHTML +=
-                `<div class="position-absolute p-5 rounded-4" id="editor">
-            <h2>Editar Informações:</h2>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Título</label>
-                <input type="email" class="form-control" id="inputData" value="">
-            </div>
-            <div class="mb-3">
-                <label for="textarea" class="form-label">Conteudo</label>
-                <textarea class="form-control" id="textarea" rows="3"  ></textarea>
-            </div>
-    
-            <button class="btn btn-outline-primary rounded-3" id="saveBtn">Salvar</button>
-            <button class="btn btn-outline-primary rounded-3" id="cancelBtn">Cancelar</button>
-        </div>`
-    
-    
-    
-            const saveBtn = document.querySelector('#saveBtn')
-            const cancelBtn = document.querySelector('#cancelBtn')
-    
-    
-            saveBtn.onclick = event => {
-                const title = document.querySelector("#inputData").value
-                const content = document.querySelector("textarea").value
-                let id = new Date();
-                id = id.getTime();
-                addDatas(title, content, id)
-            }
-    
-        } */
-
-/*     function findDataOnFirebase(find) {
-        for (let data of database) {
-            if (data.id == find.id) return (data)
-        }
-    } */
-    /* If post exist */
-    
-/*     try {
-    	c("test")
-
-        findDataOnFirebase(child)
-        document.body.innerHTML += `<div class="position-absolute p-5 rounded-4" id="editor"> <h2>Editar Informações =</h2> <div class="mb-3"> <label for="exampleFormControlInput1" class="form-label">Título</label> <input type="email" class="form-control" id="inputData" value="${findDataOnFirebase(child).title}"> </div> <div class="mb-3"> <label for="textarea" class="form-label">Conteudo</label> <textarea class="form-control" id="textarea" rows="3"  >${findDataOnFirebase(child).content}</textarea> </div> <button class="btn btn-outline-primary rounded-3" id="saveBtn">Salvar</button> <button class="btn btn-outline-primary rounded-3" id="cancelBtn">Cancelar</button> <button class="btn btn-outline-primary rounded-3" id="removeBtn">remover</button> </div>`
-        const saveBtn = document.querySelector('#saveBtn')
-        const cancelBtn = document.querySelector('#cancelBtn')
-        const removeBtn = document.querySelector('#removeBtn')
-        removeBtn.onclick = e => c(e)
-
-    } catch {
-        document.body.innerHTML += `<div class="position-absolute p-5 rounded-4" id="editor"> <h2>Editar Informações:</h2> <div class="mb-3"> <label for="exampleFormControlInput1" class="form-label">Título</label> <input type="email" class="form-control" id="inputData" value=""> </div> <div class="mb-3"> <label for="textarea" class="form-label">Conteudo</label> <textarea class="form-control" id="textarea" rows="3"  ></textarea> </div> <button class="btn btn-outline-primary rounded-3" id="saveBtn">Salvar</button> <button class="btn btn-outline-primary rounded-3" id="cancelBtn">Cancelar</button> <button class="btn btn-outline-primary rounded-3" id="removeBtn">remover</button> </div>`
-
-    };
-
-
-}
-
-async function removeData(post){
-    returnDocId(post)
-
-    function returnDocId(post){
-        c(opst)
-    } */
-/* 
-    const q = query(collection(db, "posts"));
-
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-        c(doc.id + "+" + post.id + "d")
-        if(doc.id == post.id) {c(doc.id + "+" + post.id)}
-    }); */
