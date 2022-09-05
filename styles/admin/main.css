@@ -2,9 +2,11 @@
 :root {
   --bgMenu: #290742;
   --bgEditor: #000000e5;
+  --bgLogin: #ffffff;
   --font: "Poppins", sans-serif, Arial;
   --UserAndHoverColor: #454545;
   --paternColor: #faf9f9;
+  --textColor: #290742;
 }
 
 * {
@@ -102,4 +104,46 @@ html body main #posts .cell td {
 #editor .btn-outline-primary:hover {
   background-color: #121212;
   border-color: #121212;
+}
+
+#login {
+  background-color: #DBDBDB;
+}
+#login .container-fluid {
+  background-color: #ffffff;
+}
+#login #ilustration {
+  background-color: var(--bgLogin);
+}
+#login #ilustration img {
+  width: 540px;
+  height: 436px;
+}
+#login #ilustration h1 {
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 90px;
+  color: var(--textColor);
+  text-align: center;
+}
+#login #filds {
+  background-color: var(--bgLogin);
+}
+#login #filds .btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #121212;
+  --bs-btn-border-color: #121212;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #8e8e8e;
+  --bs-btn-hover-border-color: #8e8e8e;
+  --bs-btn-focus-shadow-rgb: 49,132,253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #8e8e8e;
+  --bs-btn-active-border-color: #8e8e8e;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #121212;
+  --bs-btn-disabled-border-color: #121212;
 }/*# sourceMappingURL=main.css.map */

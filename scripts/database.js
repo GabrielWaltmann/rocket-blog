@@ -2,13 +2,14 @@ import { db } from "./firebaseConfig.js"
 
 import { collection, deleteDoc , setDoc, doc, updateDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
 
-/* Global variables */
+
 /* get  datas */
 let database = []
 onSnapshot(collection(db, "posts"), (doc) => {
     database = []
     doc.forEach(data => database.push(data.data()));
 })
+
 /* tools */
 function c(data) { console.log(data) }
 function reloadPage() {document.location.reload(true)}
@@ -153,9 +154,9 @@ function updateCounter(){
     return number.children[1].innerHTML = database.length
 }
 
+/* when started */
 setTimeout(() => {
     showPosts(database)
     updateCounter()
-
 }, 500);
 
