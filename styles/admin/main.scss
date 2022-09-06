@@ -143,10 +143,13 @@ html{
 
 #login{
     background-color: #DBDBDB;
-
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .container-fluid{
         background-color: #ffffff ;
+        max-height: 38rem;
+        max-width: 62rem ;
     }
 
     #ilustration{
@@ -171,20 +174,34 @@ html{
         background-color: var(--bgLogin);
 
         .btn-primary {
-            --bs-btn-color: #fff;
-            --bs-btn-bg: #121212;
-            --bs-btn-border-color: #121212;
-            --bs-btn-hover-color: #fff;
-            --bs-btn-hover-bg: #8e8e8e;
-            --bs-btn-hover-border-color: #8e8e8e;
-            --bs-btn-focus-shadow-rgb: 49,132,253;
-            --bs-btn-active-color: #fff;
-            --bs-btn-active-bg: #8e8e8e;
-            --bs-btn-active-border-color: #8e8e8e;
+            width: 50%;
+            transition: .45s ease;
+            --bs-btn-color: #000000;
+            --bs-btn-bg: #EFEFEF;
+            --bs-btn-border-color: #EFEFEF;
+            --bs-btn-hover-color: #000000;
+            --bs-btn-hover-bg: #cacaca;
+            --bs-btn-hover-border-color: #cacaca;
+            --bs-btn-focus-shadow-rgb: 0;
+            --bs-btn-active-color: #000000;
+            --bs-btn-active-bg: #cacaca;
+            --bs-btn-active-border-color: #cacaca;
             --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
             --bs-btn-disabled-color: #fff;
-            --bs-btn-disabled-bg: #121212;
-            --bs-btn-disabled-border-color: #121212;
+            --bs-btn-disabled-bg: #EFEFEF;
+            --bs-btn-disabled-border-color: #EFEFEF;
+        }
+
+        #loginWithGoogle{
+            width: 80% !important;
+            span{
+                font-size: 16px;
+                font-weight: 400;
+            }
+            img{
+                height: 40px;
+                width: 40px;
+            }
         }
     }
 }
