@@ -1,0 +1,68 @@
+:root {
+  --purple-bg: #290742;
+  --dark-bg: #170027;
+  --button-bg: #9e6dc2;
+  --white: #fff;
+  --light-purple: #fbf6ff;
+  --green: #4fff4b;
+}
+
+
+
+html{
+    body{
+        overflow-x: hidden;
+        width: 100vw;
+        height: 100%;
+    }
+
+    scroll-padding-top: 110px;
+    scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+main{
+    overflow: hidden;
+}
+ #home, header{
+    background: var(--purple-bg);
+    border-color: var(--green) !important;
+}
+
+.carousel{
+    height: 50vh;
+}
+
+.border-radius-none{
+    border-radius: 0 !important;
+}
+
+.card{
+    height: 450px !important;
+}
+
+.navbar-toggler[aria-expanded="false"]{
+    margin: 0 !important;
+}
+
+@media only screen and (min-width: 768px) { /* Desktop */
+    main{
+        height: 50vh !important;
+    }
+    
+}
+
+@media only screen and (max-width: 768px) { /* mobile */
+    .border, .card{
+        border: none !important;
+    }
+
+    .justify-content-center {
+        
+        justify-content: flex-start !important;
+    }
+}

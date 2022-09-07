@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+:root {
+  --bgMenu: #290742;
+  --bgEditor: #000000e5;
+  --bgLogin: #ffffff;
+  --font: "Poppins", sans-serif, Arial;
+  --UserAndHoverColor: #454545;
+  --paternColor: #faf9f9;
+  --textColor: #290742;
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: var(--font);
+}
+
+html {
+  scroll-padding-top: 110px;
+  scroll-behavior: smooth;
+}
+html body {
+  overflow-x: hidden;
+  width: 100vw;
+}
+html body header {
+  padding: 1rem 2rem;
+  background-color: var(--bgMenu);
+  max-width: 150px !important;
+  height: 100vh;
+}
+html body header #menu img {
+  width: 2rem;
+  height: 1rem;
+}
+html body header #menu a {
+  font-size: 1rem;
+  color: var(--paternColor);
+}
+html body header #profile {
+  padding-bottom: 7rem;
+}
+html body header #profile img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2392156863) 0px 3px 8px;
+}
+html body header #profile h3 {
+  color: var(--paternColor);
+  font-size: 1.5rem;
+}
+html body header #profile #checkIcon {
+  height: 1.5rem;
+  width: 1.5rem;
+  bottom: 0;
+  left: 75%;
+  box-shadow: rgba(0, 0, 0, 0.2392156863) 0px 3px 8px;
+}
+html body header ul li a:hover {
+  text-decoration: underline !important;
+}
+html body main #infos .btn-outline-primary {
+  border-color: var(--bgMenu);
+  color: var(--bgMenu);
+  transition: all 0.3s ease-in;
+}
+html body main #infos .btn-outline-primary:hover {
+  background-color: var(--bgMenu);
+  color: var(--paternColor);
+}
+html body main #infos #postLength {
+  color: var(--UserAndHoverColor);
+  gap: 10px;
+}
+html body main #infos #postLength h3, html body main #infos #postLength span {
+  font-size: 1rem;
+}
+html body main #posts table {
+  border-spacing: 30px;
+  border-collapse: separate;
+}
+html body main #posts .cell td {
+  height: 6rem;
+  padding-right: 20px;
+}
+
+#editor {
+  background-color: var(--bgEditor);
+  width: 600px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--paternColor);
+}
+#editor .btn-outline-primary {
+  border-color: var(--bgMenu);
+  transition: all 0.3s ease-in;
+  background-color: var(--bgMenu);
+  color: var(--paternColor);
+}
+#editor .btn-outline-primary:hover {
+  background-color: #121212;
+  border-color: #121212;
+}
+
+#login {
+  background-color: #DBDBDB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login .container-fluid {
+  background-color: #ffffff;
+  max-height: 38rem;
+  max-width: 62rem;
+}
+#login #ilustration {
+  background-color: var(--bgLogin);
+}
+#login #ilustration img {
+  width: 540px;
+  height: 436px;
+}
+#login #ilustration h1 {
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 90px;
+  color: var(--textColor);
+  text-align: center;
+}
+#login #filds {
+  background-color: var(--bgLogin);
+}
+#login #filds .btn-primary {
+  width: 50%;
+  transition: 0.45s ease;
+  --bs-btn-color: #000000;
+  --bs-btn-bg: #EFEFEF;
+  --bs-btn-border-color: #EFEFEF;
+  --bs-btn-hover-color: #000000;
+  --bs-btn-hover-bg: #cacaca;
+  --bs-btn-hover-border-color: #cacaca;
+  --bs-btn-focus-shadow-rgb: 0;
+  --bs-btn-active-color: #000000;
+  --bs-btn-active-bg: #cacaca;
+  --bs-btn-active-border-color: #cacaca;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #EFEFEF;
+  --bs-btn-disabled-border-color: #EFEFEF;
+}
+#login #filds #loginWithGoogle {
+  width: 80% !important;
+}
+#login #filds #loginWithGoogle span {
+  font-size: 16px;
+  font-weight: 400;
+}
+#login #filds #loginWithGoogle img {
+  height: 40px;
+  width: 40px;
+}/*# sourceMappingURL=main.css.map */
