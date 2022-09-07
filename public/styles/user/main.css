@@ -1,15 +1,12 @@
-:root {
-  --purple-bg: #290742;
-  --dark-bg: #170027;
-  --button-bg: #9e6dc2;
-  --white: #fff;
-  --light-purple: #fbf6ff;
-  --green: #4fff4b;
-}
-
+/* Variables */
+/* Global */
 html {
   scroll-padding-top: 110px;
   scroll-behavior: smooth;
+}
+html * {
+  box-sizing: border-box;
+  text-decoration: none;
 }
 html body {
   overflow-x: hidden;
@@ -17,34 +14,30 @@ html body {
   height: 100%;
 }
 
-* {
-  box-sizing: border-box;
-  text-decoration: none;
-}
-
 main {
   overflow: hidden;
 }
 
-#home, header {
-  background: var(--purple-bg);
-  border-color: var(--green) !important;
+#home {
+  background: #290742;
+  border-color: #4fff4b !important;
 }
-
-.carousel {
-  height: 50vh;
+#home header {
+  background: #290742;
+  border-color: #4fff4b !important;
 }
-
-.border-radius-none {
-  border-radius: 0 !important;
-}
-
-.card {
-  height: 450px !important;
-}
-
-.navbar-toggler[aria-expanded=false] {
+#home header .navbar-toggler[aria-expanded=false] {
   margin: 0 !important;
+}
+
+#contact a {
+  height: 40px;
+  width: 40px;
+}
+#contact a ion-icon {
+  color: #121212;
+  height: 30px;
+  width: 30px;
 }
 
 @media only screen and (min-width: 768px) { /* Desktop */

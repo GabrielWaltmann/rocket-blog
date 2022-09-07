@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+   $bgMenu: #290742;
+   $bgEditor: #000000e5;
+   $bgLogin: #ffffff;
+   $font: 'Poppins', sans-serif, Arial;
+   $UserAndHoverColor: #454545;
+   $paternColor: #faf9f9;
+   $textColor: #290742;
+
+
+
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: $font;
+}
+
+
+body{
+    overflow: hidden;
+    width: 98vw;
+    height: 100vh;
+    background-color: #dedede !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+main{
+    background-color: $bgLogin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75% !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    #ilustration{
+        background-color: $bgLogin;
+        text-align: center;
+
+        img{
+            max-width: 540px;
+            max-height: 340px;
+        }
+
+        h1{
+            font-style: normal;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 90px;
+            color: $textColor;
+            text-align: center;
+        }
+    }
+    #form{
+        background-color: $bgLogin;
+
+        #loginWithGoogle{
+            box-shadow: #0000003d 0px 0px 8px;
+           span{
+                font-size: 16px;
+                font-weight: 400;
+            }
+            img{
+                height: 30px !important;
+                width: 30px !important;
+            }
+        }
+
+        #loginWithEmail{
+            box-shadow: #0000003d 0px 0px 8px;
+        }
+
+    }
+
+    
+} 
+
+
+@media only screen and (max-width: 700px) {
+    main{
+        width: 100% !important;
+    }
+
+    body{
+        background-color: #ffffff  !important;
+    }
+}

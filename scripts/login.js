@@ -10,6 +10,8 @@ const messages = {
     isntlogged:  ()=>  c(alert("Usuario não autorizado! Por favor tente novamente ou entre em contato com o suporte")),
     noDatas: ()=> c(alert(`Favor informar um email e senha!`))
 }
+
+/* No redirect */
 function noRedirect(event) {
     event.preventDefault()
     event.stopPropagation()
