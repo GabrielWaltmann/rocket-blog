@@ -56,9 +56,9 @@ function showFirstPost() {
                 </a>
 
             </div>
-            <div class="d-flex col-md px-0 col-12
+            <div class="d-flex col-md col-12 px-0 col-12
                 align-items-center">
-                    <img src="../images/featured-image.png" class="border-radius-none" alt="representação de um notbook contendo códigos na tela">
+                    <img src="../images/featured-image.png" id="imgFirstPost" class="w-100" alt="representação de um notbook contendo códigos na tela">
             </div>
         `
     })

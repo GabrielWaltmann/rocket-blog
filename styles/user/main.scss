@@ -1,15 +1,20 @@
-:root {
-  --purple-bg: #290742;
-  --dark-bg: #170027;
-  --button-bg: #9e6dc2;
-  --white: #fff;
-  --light-purple: #fbf6ff;
-  --green: #4fff4b;
-}
+/* Variables */
+$purple-bg: #290742;
+$dark-bg: #170027;
+$button-bg: #9e6dc2;
+$white: #fff;
+$light-purple: #fbf6ff;
+$green: #4fff4b;
+$darkColor: #121212;
 
 
-
+/* Global */
 html{
+    *{
+    box-sizing: border-box;
+    text-decoration: none;
+    }
+
     body{
         overflow-x: hidden;
         width: 100vw;
@@ -20,33 +25,38 @@ html{
     scroll-behavior: smooth;
 }
 
-*{
-    box-sizing: border-box;
-    text-decoration: none;
-}
+
 
 main{
     overflow: hidden;
 }
- #home, header{
-    background: var(--purple-bg);
-    border-color: var(--green) !important;
+
+
+#home{ 
+    background: $purple-bg;
+    border-color: $green !important;
+    header{
+        background: $purple-bg;
+        border-color: $green !important;
+
+        .navbar-toggler[aria-expanded="false"]{
+            margin: 0 !important;
+        }
+    }
 }
 
-.carousel{
-    height: 50vh;
-}
-
-.border-radius-none{
-    border-radius: 0 !important;
-}
-
-.card{
-    height: 450px !important;
-}
-
-.navbar-toggler[aria-expanded="false"]{
-    margin: 0 !important;
+footer{
+    #contact{
+        a{
+            height: 40px;
+            width: 40px;
+            ion-icon{
+                color: $darkColor;
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: 768px) { /* Desktop */
