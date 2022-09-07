@@ -6,39 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../styles/admin/main.css">
+    <link rel="stylesheet" href="../styles/login/main.css">
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <title>RocketBlog login</title>
 </head>
 
 <body>
-    <main id="login" class="vh-100 d-flex ">
-        <div class="container-fluid row mx-auto">
-            <div class="col" id="ilustration">
-                <img src="../images/login.jpg" alt="Respresentação contendo uma pessoa modificando um texto.">
+    <main class=" p-0-md h-md-75 flex-column flex-md-row ">
+            <div class="col-md h-100 col-12 " id="ilustration">
+                <img src="../images/login.jpg" alt="Respresentação contendo uma pessoa modificando um texto." class="w-100 w-md-auto">
                 <h1>LOGIN</h1>
             </div>
 
-            <form id="filds" class="col align-content-center d-flex row">
-                    <div class="mb-3">
+            <form id="form" class="col-md mx-4 h-md-100 h-auto row align-content-center justify-content-center col-12 px-4 px-0-md">
+                    <div class="w-100 p-0">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="emailInput" >
                     </div>
-                    <div class="mb-3">
+                    <div class="w-100 p-0">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
                         <input type="password" class="form-control" id="passwordInput">
                     </div>
-                    <button type="submit" id="loginWithEmail" class="btn btn-primary mx-auto">Entrar</button>
+                    <button type="submit" id="loginWithEmail" class="btn mt-4 btn-outline-dark border">Entrar</button>
 
-                    <p class="text-center my-3">or sign up with:</p> 
-                    <button type="submit" class="btn btn-primary mx-auto" id="loginWithGoogle">
+                    <p class="text-center w-100 my-2">or sign up with:</p> 
+                    <button type="submit" class="btn border btn-outline-dark" id="loginWithGoogle">
                         <img src="../images/google.png" alt="">
                         <span>Entrar com o google</span>
                     </button>
 
             </form>
 
-        </div>
+
     </main>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

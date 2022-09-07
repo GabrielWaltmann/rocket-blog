@@ -73,5 +73,5 @@ document.body.onload = event => {
     setTimeout(() => {
         showPosts()
         showFirstPost()
-    }, 1000);
+    }, 2000);
 }

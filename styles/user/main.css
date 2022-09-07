@@ -30,11 +30,11 @@ main {
   margin: 0 !important;
 }
 
-footer #contact a {
+#contact a {
   height: 40px;
   width: 40px;
 }
-footer #contact a ion-icon {
+#contact a ion-icon {
   color: #121212;
   height: 30px;
   width: 30px;

@@ -45,7 +45,7 @@ main{
     }
 }
 
-footer{
+
     #contact{
         a{
             height: 40px;
@@ -56,14 +56,15 @@ footer{
                 width: 30px;
             }
         }
+        
     }
-}
+
 
 @media only screen and (min-width: 768px) { /* Desktop */
     main{
         height: 50vh !important;
     }
-    
+
 }
 
 @media only screen and (max-width: 768px) { /* mobile */

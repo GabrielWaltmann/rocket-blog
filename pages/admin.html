@@ -12,8 +12,8 @@
 </head>
 <body class="h-100 p-0 m-0 row">
     <!-- home -->
-    <header class="col-3">
-        <div id="profile" class="d-flex align-items-center flex-column text-center">
+    <header class="col-md-3 col-12 pt-md-5 pt-3">
+        <div id="profile" class="d-flex align-items-center flex-row flex-column text-center pb-md-5 p-0">
             <div id="photo" class="position-relative">
                 <img src="../images/photo.png" alt="Imagem do perfil de usuário" class="position-relative">
                 <img src="../images/check.svg" id="checkIcon"
@@ -22,7 +22,7 @@
             <h3 id="nameUser">Gabriel Waltmann</h3>
         </div>
 
-        <ul id="menu" class="gap-3 d-flex flex-column ps-0 mx-0">
+        <ul id="menu" class="gap-3 d-flex flex-md-column ps-0 mx-0 justify-content-center mb-0" >
             <li>
                 <a href="#" class="text-decoration-none d-flex align-items-center ">
                     <img src="../images/home.svg" alt="Botão ir para as postagens.">
@@ -38,21 +38,22 @@
         </ul>
     </header>
 
-    <main class="col px-5 py-5">
+    <main class="px-md-5 px-2 py-5 col-md-9">
         <h1>Postagens</h1>
 
-        <section id="infos" class="d-flex justify-content-between align-items-center mt-3">
+        <section id="infos" class="d-flex justify-content-md-between align-items-center mt-3 flex-md-row flex-column justify-content-center">
 
-            <div id="postLength" class="d-flex">
+            <div id="postLength" class="d-flex col-md col-12 justify-content-center">
                 <h3>Número de postagens:</h3>
                 <span></span>
             </div>
-            <button class="btn btn-outline-primary rounded-4" id="createBtn">Criar nova postagem</button>
+
+            <button class="btn btn-outline-primary rounded-4 col-md col-12" id="createBtn">Criar nova postagem</button>
 
 
         </section>
 
-        <section id="posts" class="pt-5 mt-5">
+        <section id="posts" class="pt-md-5 mt-md-5">
             <table></table>
         </section>
     </main>

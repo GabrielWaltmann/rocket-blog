@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif, Arial;
+}
+
+body {
+  overflow: hidden;
+  width: 98vw;
+  height: 100vh;
+  background-color: #dedede !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75% !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+main #ilustration {
+  background-color: #ffffff;
+  text-align: center;
+}
+main #ilustration img {
+  max-width: 540px;
+  max-height: 340px;
+}
+main #ilustration h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 90px;
+  color: #290742;
+  text-align: center;
+}
+main #form {
+  background-color: #ffffff;
+}
+main #form #loginWithGoogle {
+  box-shadow: rgba(0, 0, 0, 0.2392156863) 0px 0px 8px;
+}
+main #form #loginWithGoogle span {
+  font-size: 16px;
+  font-weight: 400;
+}
+main #form #loginWithGoogle img {
+  height: 30px !important;
+  width: 30px !important;
+}
+main #form #loginWithEmail {
+  box-shadow: rgba(0, 0, 0, 0.2392156863) 0px 0px 8px;
+}
+
+@media only screen and (max-width: 700px) {
+  main {
+    width: 100% !important;
+  }
+  body {
+    background-color: #ffffff !important;
+  }
+}/*# sourceMappingURL=main.css.map */
